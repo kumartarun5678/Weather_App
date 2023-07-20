@@ -23,19 +23,19 @@ async function checkweather(city){
     document.querySelector(".wind").innerHTML = data.wind.speed +"km/h";
 
     if(data.weather[0].main == "clouds"){
-      weatherIcon.src = "images/clouds.png";
+      weatherIcon.src = "clouds.png";
     }
     else if(data.weather[0].main == "clear"){
-      weatherIcon.src = "images/clear.png";
+      weatherIcon.src = "clear.png";
     }
     else if(data.weather[0].main == "rain"){
-     weatherIcon.src = "images/rain.png";
+     weatherIcon.src = "rain.png";
     }
     else if(data.weather[0].main == "Drizzle"){
-     weatherIcon.src = "images/drizzle.png";
+     weatherIcon.src = "drizzle.png";
     }
     else if(data.weather[0].main == "Mist"){
-      weatherIcon.src = "images/mist.png";
+      weatherIcon.src = "mist.png";
     }
 
    document.querySelector(".weather").style.display = "block";
@@ -48,57 +48,3 @@ searchBtn.addEventListener("click",()=>{
   checkweather(searchBox.value);
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const apiKey = '0a0050338f027b718a306e1a90403cf6';
-// const searchInput = document.getElementById('search');
-// const locationElement = document.getElementById('location');
-// const temperatureElement = document.getElementById('temperature');
-// const descriptionElement = document.getElementById('description');
-
-// function getWeather() {
-//   const cityName = searchInput.value;
-//   if (cityName.trim() === '') {
-//     alert('Please enter a valid city name.');
-//     return;
-//   }
-
-// //   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
-//   fetch(`https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={0a0050338f027b718a306e1a90403cf6}`)
-//     .then(response => response.json())
-//     .then(data => {
-//       if (data.cod === '404') {
-//         alert('City not found. Please enter a valid city name.');
-//       } else {
-//         const location = `${data.name}, ${data.sys.country}`;
-//         const temperature = `${data.main.temp}°C`;
-//         const description = data.weather[0].description;
-
-//         locationElement.textContent = location;
-//         temperatureElement.textContent = temperature;
-//         descriptionElement.textContent = description;
-//       }
-//     })
-//     .catch(error => {
-//       console.error('Error fetching weather data:', error);
-//     });
-// }
